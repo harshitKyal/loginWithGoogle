@@ -68,17 +68,7 @@ app.use( bodyParser.json());
 app.use( bodyParser.urlencoded({
 	extended: true
 }));
-app.use( session({ 
-	secret: 'cookie_secret',
-	name:   'kaas',
-	store:  new RedisStore({
-		host: '127.0.0.1',
-		port: 6379
-	}),
-	proxy:  true,
-    resave: true,
-    saveUninitialized: true
-}));
+
 app.use( passport.initialize());
 app.use( passport.session());
 
